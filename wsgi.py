@@ -15,12 +15,8 @@
 #
 
 
-from flask import Blueprint
+from main import app
 
 
-blueprint_account = Blueprint('blueprint_account', __name__, url_prefix='/account')
-
-
-@blueprint_account.route('/create', endpoint='sample_main', methods=('GET',))
-def account_create():
-    return 'REGISTRATION!'
+if __name__ == "__main__":
+    app.run()

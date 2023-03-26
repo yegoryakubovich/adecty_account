@@ -15,8 +15,17 @@
 #
 
 
-from configparser import ConfigParser
+from adecty_design.properties.colors import Colors
 
 
-config = ConfigParser()
-config.read('config.ini')
+colors = Colors(
+    background='#fff',
+    background_secondary='#d1d1d1',
+    negative='#ed7474',
+    positive='#a9ffa3',
+    primary='#000',
+    primary_secondary='#9c9c9c',
+    selected='#777',
+    text='#363636',
+    unselected='#fff',
+)

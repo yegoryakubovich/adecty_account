@@ -15,9 +15,11 @@
 #
 
 
-from app.web import web_create
+from flask import Flask
+from app.blueprints import blueprints
 
 
 def app_create():
-    webapp = web_create()
-    return webapp
+    app = Flask(__name__)
+    [app.register_blueprint(blueprint) for blueprint in blueprints]
+    return app

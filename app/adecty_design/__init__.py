@@ -15,12 +15,11 @@
 #
 
 
-from flask import Flask
+from app.adecty_design.interface import interface
+from app.adecty_design.colors import colors
 
-from app.web.blueprints import blueprints
 
-
-def web_create():
-    web = Flask(__name__)
-    [web.register_blueprint(blueprint) for blueprint in blueprints]
-    return web
+__all__ = (
+    'interface',
+    'colors',
+)

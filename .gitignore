@@ -1,7 +1,5 @@
 /.idea
 *__pycache__
-app/static/images/*
-!app/static/images
-adecty_api_client
-adecty_design
 config.ini
+/adecty_api_client
+/adecty_design

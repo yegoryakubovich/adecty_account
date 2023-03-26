@@ -15,8 +15,13 @@
 #
 
 
-from configparser import ConfigParser
+from app.blueprints.account import blueprint_account
+from app.blueprints.main import blueprint_main
+from app.blueprints.errors import blueprint_errors
 
 
-config = ConfigParser()
-config.read('config.ini')
+blueprints = (
+    blueprint_errors,
+    blueprint_main,
+    blueprint_account,
+)

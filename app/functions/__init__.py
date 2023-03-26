@@ -13,13 +13,3 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-
-from app.web.blueprints.account import blueprint_account
-from app.web.blueprints.main import blueprint_main
-
-
-blueprints = (
-    blueprint_main,
-    blueprint_account,
-)

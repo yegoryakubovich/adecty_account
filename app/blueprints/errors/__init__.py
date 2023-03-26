@@ -15,8 +15,18 @@
 #
 
 
-from configparser import ConfigParser
+from flask import Blueprint, redirect
+from werkzeug.exceptions import InternalServerError
 
 
-config = ConfigParser()
-config.read('config.ini')
+blueprint_errors = Blueprint('blueprint_errors', __name__)
+
+
+@blueprint_errors.app_errorhandler(404)
+def errors_404(error: InternalServerError):
+    return 'Not found', 404
+
+
+@blueprint_errors.app_errorhandler(401)
+def errors_401(error: InternalServerError):
+    return redirect('/account/session/create')

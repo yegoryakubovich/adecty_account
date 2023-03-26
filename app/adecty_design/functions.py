@@ -15,12 +15,20 @@
 #
 
 
-from flask import Blueprint
+from adecty_design.properties import Font, Margin
+from adecty_design.widgets import Card, Text
+from app.adecty_design import colors
 
 
-blueprint_main = Blueprint('blueprint_main', __name__, url_prefix='')
-
-
-@blueprint_main.route('/', endpoint='main', methods=('GET',))
-def main():
-    return 'Main page. Hello, world!'
+def message_error_get(text):
+    message = Card(widgets=[
+        Text(
+            text=text,
+            font=Font(
+                size=12,
+                weight=500,
+                color=colors.background,
+            ),
+        )
+    ], color_background=colors.negative, margin=Margin(down=12))
+    return message

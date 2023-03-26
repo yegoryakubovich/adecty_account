@@ -15,8 +15,7 @@
 #
 
 
-from configparser import ConfigParser
+from adecty_api_client import AdectyApiClient
 
 
-config = ConfigParser()
-config.read('config.ini')
+adecty_api_client = AdectyApiClient()

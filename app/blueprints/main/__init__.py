@@ -15,8 +15,14 @@
 #
 
 
-from configparser import ConfigParser
+from flask import Blueprint, redirect
+
+from app.functions.data_input import data_input
+
+blueprint_main = Blueprint('blueprint_main', __name__, url_prefix='')
 
 
-config = ConfigParser()
-config.read('config.ini')
+@blueprint_main.route('/', endpoint='main', methods=('GET',))
+@data_input({'account_session_token': True})
+def main(account_session_token):
+    return redirect('/account/get')
