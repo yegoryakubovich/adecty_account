@@ -17,9 +17,3 @@
 
 from app.adecty_design.interface import interface
 from app.adecty_design.colors import colors
-
-
-__all__ = (
-    'interface',
-    'colors',
-)

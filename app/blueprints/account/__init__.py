@@ -165,7 +165,7 @@ def account_session_create():
 @blueprint_account.route('/session/token/get', endpoint='account_session_token_get', methods=('GET', ))
 def account_session_token_get():
     redirect_url = request.args.get('redirect_url')
-    if redirect_url not in ['api.adecty.com', 'pay.adecty.com']:
+    if redirect_url not in ['api.adecty.com', 'pay.adecty.com', 'fexps.com']:
         return redirect(location='/')
 
     response = redirect(location='/account/session/token/redirect')
